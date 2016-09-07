@@ -29,11 +29,11 @@ It's fun!
 
 ##Runtime Requirements
 
-- Swift 2.2
+- Swift 2.3
 - Xcode 7.3
 - iOS8.0 or later
 
-TouchVisualizer works with Swift 2.2 from version 1.4.0.
+TouchVisualizer works with Swift 2.3 from version 1.4.0.
 
 ## Installation and Setup
 **Note:** Embedded frameworks require a minimum deployment target of iOS 8.1.

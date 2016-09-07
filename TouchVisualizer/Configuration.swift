@@ -18,16 +18,18 @@ public struct Configuration {
     // Image of touch points
     public var image: UIImage? = {
         let rect = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 60.0)
-
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-        let contextRef = UIGraphicsGetCurrentContext()
+
+        guard let contextRef = UIGraphicsGetCurrentContext() else { return nil }
+
         CGContextSetFillColorWithColor(contextRef, Constants.defaultColor.CGColor)
         CGContextFillEllipseInRect(contextRef, rect)
-        var image = UIGraphicsGetImageFromCurrentImageContext()
+
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         UIGraphicsEndImageContext()
 
         return image.imageWithRenderingMode(.AlwaysTemplate)
-        }()
+    }()
 
     /**
     Default touch point size. If `showsTouchRadius` is enabled, this value is ignored
